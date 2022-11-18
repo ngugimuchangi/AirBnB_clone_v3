@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Flask api to resturn status
+""" Flask api to return status
 """
 from api.v1.views import app_views
 from flask import Flask
