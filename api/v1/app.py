@@ -2,7 +2,7 @@
 """ Flask api to return status
 """
 from api.v1.views import app_views
-from flask import Flask
+from flask import Flask, jsonify, make_response
 from models import storage
 from os import getenv
 
@@ -16,6 +16,12 @@ def teardown(exception):
         reloads objects in case of File Storage
     """
     storage.close()
+
+
+@app.errorhandler(404)
+def error_404(error):
+    """ response for 404 errors"""
+    return make_response(jsonify({"error": "Not found"}), 404)
 
 
 if __name__ == "__main__":
