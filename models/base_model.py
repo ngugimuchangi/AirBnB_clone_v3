@@ -53,7 +53,7 @@ class BaseModel:
         if "password" in str_dict.keys():
             str_dict.pop("password")
         return "[{:s}] ({:s}) {}".format(self.__class__.__name__, self.id,
-                                         str_dict)
+                                         self.__dict__)
 
     def save(self):
         """updates the attribute 'updated_at' with the current datetime"""
