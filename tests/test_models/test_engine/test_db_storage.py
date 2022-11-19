@@ -86,10 +86,16 @@ test_db_storage.py'])
         place.save()
 
         # check for valid search results
-        self.assertTrue(storage.get(User, user.id) is user)
-        self.assertTrue(storage.get(State, state.id) is state)
-        self.assertTrue(storage.get(City, city.id) is city)
-        self.assertTrue(storage.get(Place, place.id) is place)
+        if os.getenv('HBNB_TYPE_STORAGE') == 'db':
+            self.assertTrue(storage.get(User, user.id) is user)
+            self.assertTrue(storage.get(State, state.id) is state)
+            self.assertTrue(storage.get(City, city.id) is city)
+            self.assertTrue(storage.get(Place, place.id) is place)
+        else:
+            self.assertEqual(storage.get(User, user.id).id, user.id)
+            self.assertEqual(storage.get(State, state.id).id,  state.id)
+            self.assertEqual(storage.get(City, city.id).id, city.id)
+            self.assertEqual(storage.get(Place, place.id).id, place.id)
 
         # check for empty search results
         self.assertTrue(storage.get(User, str(uuid4())) is None)
