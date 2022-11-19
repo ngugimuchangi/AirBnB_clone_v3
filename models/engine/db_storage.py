@@ -78,16 +78,12 @@ class DBStorage:
     def get(self, cls, id):
         """retrieve on object based on its id and class"""
         if cls in classes.values():
-            self.close()
-            self.reload()
             obj = self.__session.query(cls).filter_by(id=id).first()
             return obj
 
     def count(self, cls=None):
         """retrieve the count of object belonging ot a specific class"""
         count = 0
-        self.close()
-        self.reload()
         if cls is not None:
             if cls in classes.values():
                 count = self.__session.query(cls).count()
