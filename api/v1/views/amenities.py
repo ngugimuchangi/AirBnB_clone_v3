@@ -65,7 +65,7 @@ def get_json(request):
        and handles errors reponses
     """
     #  exception handling to avoid calling
-    #  on_json_loading_failde()
+    #  on_json_loading_failed()
     try:
         data = request.get_json()
     except Exception:
