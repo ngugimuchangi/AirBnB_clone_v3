@@ -49,9 +49,9 @@ class BaseModel:
 
     def __str__(self):
         """String representation of the BaseModel class"""
-        str_dict = self.__dict__.copy()
-        if "password" in str_dict.keys():
-            str_dict.pop("password")
+        #  str_dict = self.__dict__.copy()
+        #  if "password" in str_dict.keys():
+        #    str_dict.pop("password")
         return "[{:s}] ({:s}) {}".format(self.__class__.__name__, self.id,
                                          self.__dict__)
 
