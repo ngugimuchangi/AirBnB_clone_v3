@@ -25,8 +25,7 @@ def amenitys():
         if 'name' not in data.keys():
             return make_response('Missing name\n', 400)
         new_amenity = Amenity(**data)
-        storage.new(new_amenity)
-        storage.save()
+        new_amenity.save()
         return make_response(jsonify(new_amenity.to_dict()), 201)
 
 
@@ -55,7 +54,8 @@ def amenity_by_id(amenity_id):
         if not data:
             return make_response('Not a JSON\n', 400)
         for key, value in data.items():
-            setattr(amenity, key, value)
+            if key not in ['id', 'created_at', 'updated_at']:
+                setattr(amenity, key, value)
         amenity.save()
         return make_response(jsonify(amenity.to_dict()), 200)
 
