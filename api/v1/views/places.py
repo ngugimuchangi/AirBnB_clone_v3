@@ -119,13 +119,6 @@ def create_place_list(place_list, city, amenities=None):
         for place in city.places:
             place_dict = place.to_dict()
 
-            #  for db storage: query place.amenities
-            #  add attributes amenites with list of
-            #  unserializable amenities objects
-            #  the key-value pair must be removed
-            #  to prevent JSON serializaiton errors.
-            #  This also ensures consistency in the
-            #  object string representation
             if place_dict.get("amenities"):
                 place_dict.pop("amenities")
             if all(amenity in place.amenities for amenity in amenities):
