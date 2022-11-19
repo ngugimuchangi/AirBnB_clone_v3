@@ -100,8 +100,8 @@ def place_search():
                   for city_id in filters.get('cities')]
         for city in cities:
             create_place_list(places, city, filters.get('amenities'))
-    if len(filters) == 0 or (len(filters) == 1
-                             and filters.get('amenities') is not None):
+    if len(filters) == 0 or all([len(filters) == 1,
+                                filters.get('amenities') is not None]):
         states = storage.all(State).values()
         for state in states:
             for city in state.cities:
