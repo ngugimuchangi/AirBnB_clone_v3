@@ -64,7 +64,8 @@ def review_by_id(review_id):
         if not data:
             return make_response('Not a JSON\n', 400)
         for key, value in data.items():
-            if key not in ['id', 'user_id', 'place_id', 'created_at', 'updated_at']:
+            if key not in ['id', 'user_id', 'place_id',
+                           'created_at', 'updated_at']:
                 setattr(review, key, value)
         review.save()
         return make_response(jsonify(review.to_dict()), 200)
