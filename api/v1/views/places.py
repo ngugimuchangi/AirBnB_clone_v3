@@ -78,10 +78,10 @@ def place_search():
     """search places using JSON
        data passed in the request
        body:
-       * inclusive filter(s)
+       inclusive filter(s)
         1. states
         2. cities
-       * exclusive filter(s)
+       exclusive filter(s)
         1. amenities
     """
     filters = get_json(request)
