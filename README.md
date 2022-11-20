@@ -59,13 +59,13 @@ Classes inherited from Base Model:
 * `def all(self)` - returns the dictionary __objects
 * `def new(self, obj)` - sets in __objects the obj with key <obj class name>.id
 * `def save(self)` - serializes __objects to the JSON file (path: __file_path)
-* ` def reload(self)` -  deserializes the JSON file to __objects
+* `def reload(self)` -  deserializes the JSON file to __objects
 * `def delete(self, obj)` -  deletes obj from __objects if it's inside
 * `def get(self, cls, id)` -  retrieves an object based on its id and class
 * `def count(self, cls)` - retrieve the count of object belonging to a specific class
 * `def close(self)` - call reload() method for deserializing the JSON file to objects
 
-
+[db_storage.py](/models/engine/db_storage.py) - interacts with the MySQL database
 
 #### `/tests` directory contains all unit test cases for this project:
 [/test_models/test_base_model.py](/tests/test_models/test_base_model.py) - Contains the TestBaseModel and TestBaseModelDocs classes
