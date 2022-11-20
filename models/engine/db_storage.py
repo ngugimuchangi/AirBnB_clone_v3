@@ -82,7 +82,7 @@ class DBStorage:
             return obj
 
     def count(self, cls=None):
-        """retrieve the count of object belonging ot a specific class"""
+        """retrieve the count of object belonging to a specific class"""
         count = 0
         if cls is not None:
             if cls in classes.values():

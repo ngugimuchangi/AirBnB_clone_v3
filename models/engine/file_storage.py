@@ -82,7 +82,7 @@ class FileStorage:
                     return obj
 
     def count(self, cls=None):
-        """retrieve the count of object belonging ot a specific class"""
+        """retrieve the count of object belonging to a specific class"""
         self.reload()
         if cls is not None:
             count = 0
