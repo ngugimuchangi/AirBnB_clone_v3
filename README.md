@@ -54,7 +54,7 @@ Classes inherited from Base Model:
 * [state.py](/models/state.py)
 * [user.py](/models/user.py)
 
-#### `/models/engine` directory contains File Storage class that handles JSON serialization and deserialization :
+#### `/models/engine` directory contains File Storage class that handles JSON serialization and deserialization and DBStorage that interacts with the MySQL database:
 [file_storage.py](/models/engine/file_storage.py) - serializes instances to a JSON file & deserializes back to instances
 * `def all(self)` - returns the dictionary __objects
 * `def new(self, obj)` - sets in __objects the obj with key <obj class name>.id
@@ -64,6 +64,8 @@ Classes inherited from Base Model:
 * `def get(self, cls, id)` -  retrieves an object based on its id and class
 * `def count(self, cls)` - retrieve the count of object belonging to a specific class
 * `def close(self)` - call reload() method for deserializing the JSON file to objects
+
+
 
 #### `/tests` directory contains all unit test cases for this project:
 [/test_models/test_base_model.py](/tests/test_models/test_base_model.py) - Contains the TestBaseModel and TestBaseModelDocs classes
