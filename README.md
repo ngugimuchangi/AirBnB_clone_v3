@@ -136,7 +136,9 @@ TestBaseModel class:
 
 [/tests/test_models/test_engine] - Contains the TestFileStorage classes and TestDBStorage classes:
 
+[/test_models/test_engine/test_db_storage.py](/tests/test_models/test_engine/test_db_storage.py) - Contains the TestFileStorage class:
 
+* `def test_all_returns_dict(self)` - Tests that all returns a dictionary
 
 ## Examples of use
 ```
