@@ -139,6 +139,9 @@ TestBaseModel class:
 [/test_models/test_engine/test_db_storage.py](/tests/test_models/test_engine/test_db_storage.py) - Contains the TestFileStorage class:
 
 * `def test_all_returns_dict(self)` - Tests that all returns a dictionary
+* `def test_all_no_class(self)` - Test that all returns all rows when no class is passed
+* `def test_new(self)` - Tests that new adds an object to the database
+* `def test_save(self)` - Tests that save properly saves objects to file.json
 
 ## Examples of use
 ```
