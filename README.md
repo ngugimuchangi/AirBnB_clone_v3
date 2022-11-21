@@ -144,6 +144,11 @@ TestBaseModel class:
 * `def test_save(self)` - Tests that save properly saves objects to file.json
 
 [/test_models/test_engine/test_file_storage.py](/tests/test_models/test_engine/test_file_storage.py) - Contains the TestFileStorage class:
+
+* `def test_all_returns_dict(self)` - Tests that all returns the FileStorage.__objects attr
+* `def test_new(self)` - Tests that new adds an object to the FileStorage.__objects attr
+* `def test_save(self)` - Tests that save properly saves objects to file.json
+
 ## Examples of use
 ```
 vagrantAirBnB_clone$./console.py
