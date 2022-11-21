@@ -73,8 +73,8 @@ Classes inherited from Base Model:
 * `def new(self, obj)` - add the object to the current database session
 * `def save(self)` - commit all changes of the current database session
 * `def reload(self)` -  reloads data from the database
-* `def delete(self, obj)` -  deletes obj from __objects if it's inside
-* `def get(self, cls, id)` -  retrieves an object based on its id and class
+* `def delete(self, obj)` -  delete from the current database session obj if not None
+* `def get(self, cls, id)` -  retrieve on object based on its id and class
 * `def count(self, cls)` - retrieve the count of object belonging to a specific class
 * `def close(self)` - call reload() method for deserializing the JSON file to objects
 
