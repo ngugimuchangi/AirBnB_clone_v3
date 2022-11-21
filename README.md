@@ -69,6 +69,15 @@ Classes inherited from Base Model:
 
 [db_storage.py](/models/engine/db_storage.py) - interacts with the MySQL database
 
+* `def all(self)` - query on the current database session
+* `def new(self, obj)` - add the object to the current database session
+* `def save(self)` - commit all changes of the current database session
+* `def reload(self)` -  reloads data from the database
+* `def delete(self, obj)` -  deletes obj from __objects if it's inside
+* `def get(self, cls, id)` -  retrieves an object based on its id and class
+* `def count(self, cls)` - retrieve the count of object belonging to a specific class
+* `def close(self)` - call reload() method for deserializing the JSON file to objects
+
 #### `/tests` directory contains all unit test cases for this project:
 [/test_models/test_base_model.py](/tests/test_models/test_base_model.py) - Contains the TestBaseModel and TestBaseModelDocs classes
 TestBaseModelDocs class:
@@ -133,8 +142,6 @@ TestBaseModel class:
 * `def test_pep8_conformance_test_user(self)` - Test that tests/test_models/test_user.py conforms to PEP8
 * `def test_user_module_docstring(self)` - Test for the user.py module docstring
 * `def test_user_class_docstring(self)` - Test for the User class docstring
-
-[/tests/test_models/test_engine] - Contains the TestFileStorage classes and TestDBStorage classes:
 
 [/test_models/test_engine/test_db_storage.py](/tests/test_models/test_engine/test_db_storage.py) - Contains the TestFileStorage class to test MySQL database:
 
