@@ -76,7 +76,7 @@ Classes inherited from Base Model:
 * `def delete(self, obj)` -  delete from the current database session obj if not None
 * `def get(self, cls, id)` -  retrieve on object based on its id and class
 * `def count(self, cls)` - retrieve the count of object belonging to a specific class
-* `def close(self)` - call reload() method for deserializing the JSON file to objects
+* `def close(self)` - call remove() method on the private session attribute
 
 #### `/tests` directory contains all unit test cases for this project:
 [/test_models/test_base_model.py](/tests/test_models/test_base_model.py) - Contains the TestBaseModel and TestBaseModelDocs classes
